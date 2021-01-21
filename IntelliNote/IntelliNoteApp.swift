@@ -11,7 +11,7 @@ import SwiftUI
 struct IntelliNoteApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NotesView(viewModel: NotesViewModel())
         }
     }
 }
