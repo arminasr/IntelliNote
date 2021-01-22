@@ -7,10 +7,17 @@
 
 import SwiftUI
 
+enum ActiveSheet: Identifiable {
+    case imagePicker, audioPicker
+    
+    var id: Int {
+        hashValue
+    }
+}
+
 struct NotesView: View {
     @ObservedObject var viewModel: NotesViewModel
-    @State private var showingImagePicker = false
-    @State private var inputImage: UIImage?
+    @State var activeSheet: ActiveSheet?
     
     init(viewModel: NotesViewModel) {
         self.viewModel = viewModel
@@ -19,7 +26,8 @@ struct NotesView: View {
     var body: some View {
         ZStack {
             VStack {
-                NoteView(viewModel: viewModel, showingImagePicker: $showingImagePicker)
+                NoteView(viewModel: viewModel,
+                         activeSheet: $activeSheet)
                 List {
                     ForEach(viewModel.notes) { note in
                         NoteRow(note: note)
@@ -27,17 +35,29 @@ struct NotesView: View {
                     .onDelete(perform: viewModel.deleteNote)
                 }
             }
-            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-                ImagePicker(image: self.$inputImage)
+            .sheet(item: $activeSheet) { sheet in
+                switch sheet {
+                case .audioPicker:
+                    PickerView { url in
+                        loadAudio(with: url)
+                    }
+                case .imagePicker:
+                    ImagePicker { image in
+                        loadImage(image)
+                    }
+                }
             }
             ActivityIndicator(isAnimating: $viewModel.isLoading, style: .large)
         }
         .disabled(viewModel.isLoading)
     }
     
-    func loadImage() {
-        guard let inputImage = inputImage else { return }
-        viewModel.recognizeText(from: inputImage)
+    func loadImage(_ image: UIImage) {
+        viewModel.recognizeText(from: image)
+    }
+    
+    func loadAudio(with url: URL) {
+        viewModel.recognizeText(from: url)
     }
 }
 

@@ -10,6 +10,7 @@
 		424AAD5D25BAECF800E7A287 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AAD5C25BAECF800E7A287 /* ImagePicker.swift */; };
 		424AAD6025BAF42A00E7A287 /* TextRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AAD5F25BAF42A00E7A287 /* TextRecognitionService.swift */; };
 		424AAD6325BB01AF00E7A287 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AAD6225BB01AF00E7A287 /* ActivityIndicator.swift */; };
+		424AAD6725BB0EAA00E7A287 /* FilePickerPresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AAD6625BB0EAA00E7A287 /* FilePickerPresentedView.swift */; };
 		426B71E425B7EA0F003FDCEB /* IntelliNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B71E325B7EA0F003FDCEB /* IntelliNoteApp.swift */; };
 		426B71E625B7EA0F003FDCEB /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B71E525B7EA0F003FDCEB /* NotesView.swift */; };
 		426B71E825B7EA12003FDCEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426B71E725B7EA12003FDCEB /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		424AAD5C25BAECF800E7A287 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		424AAD5F25BAF42A00E7A287 /* TextRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionService.swift; sourceTree = "<group>"; };
 		424AAD6225BB01AF00E7A287 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		424AAD6625BB0EAA00E7A287 /* FilePickerPresentedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePickerPresentedView.swift; sourceTree = "<group>"; };
 		426B71E025B7EA0F003FDCEB /* IntelliNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelliNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426B71E325B7EA0F003FDCEB /* IntelliNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelliNoteApp.swift; sourceTree = "<group>"; };
 		426B71E525B7EA0F003FDCEB /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				426B726325B93F08003FDCEB /* NotesViewModel.swift */,
 				426B726625B940A1003FDCEB /* Note.swift */,
 				424AAD5C25BAECF800E7A287 /* ImagePicker.swift */,
+				424AAD6625BB0EAA00E7A287 /* FilePickerPresentedView.swift */,
 				424AAD6225BB01AF00E7A287 /* ActivityIndicator.swift */,
 			);
 			path = UI;
@@ -180,6 +183,7 @@
 				426B72CE25BAB3CA003FDCEB /* NoteView.swift in Sources */,
 				424AAD5D25BAECF800E7A287 /* ImagePicker.swift in Sources */,
 				426B71E425B7EA0F003FDCEB /* IntelliNoteApp.swift in Sources */,
+				424AAD6725BB0EAA00E7A287 /* FilePickerPresentedView.swift in Sources */,
 				426B726425B93F08003FDCEB /* NotesViewModel.swift in Sources */,
 				424AAD6025BAF42A00E7A287 /* TextRecognitionService.swift in Sources */,
 				424AAD6325BB01AF00E7A287 /* ActivityIndicator.swift in Sources */,

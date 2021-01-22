@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5D8149D9-0921-4482-9D8E-BB5DF76A503F"
+            uuid = "D5C9CF43-E864-4A22-8931-8B4AADEC15AF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IntelliNote/UI/NotesView.swift"
+            filePath = "IntelliNote/UI/NotesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "loadImage()"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "didRecogniceTextFromAudio(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C52E746-95E8-4177-9A35-32C7637ABB97"
+            uuid = "EB5D9518-6F29-4D0F-8950-36B9E683AE3D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IntelliNote/Services/TextRecognitionService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "init()"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "recognizeText(fromAudioFileWith:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteView: View {
     @ObservedObject var viewModel: NotesViewModel
-    @Binding var showingImagePicker: Bool
+    @Binding var activeSheet: ActiveSheet?
     
     var body: some View {
         VStack {
@@ -33,6 +33,7 @@ struct NoteView: View {
             })
             HStack(alignment: .center) {
                 Button(action: {
+                    activeSheet = .audioPicker
                     print("🎤")
                 },
                 label: { Text("🎤").padding() })
@@ -43,7 +44,7 @@ struct NoteView: View {
                 .padding()
                 Text("Sentiment: \(viewModel.currentNote.sentiment)")
                 Button(action: {
-                    showingImagePicker = true
+                    activeSheet = .imagePicker
                     print("📸")
                 },
                 label: { Text("📸").padding() })
@@ -59,6 +60,7 @@ struct NoteView: View {
 
 struct NoteView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteView(viewModel: NotesViewModel(), showingImagePicker: .constant(false))
+        NoteView(viewModel: NotesViewModel(),
+                 activeSheet: .constant(nil))
     }
 }

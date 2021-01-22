@@ -16,7 +16,7 @@ class NotesViewModel: ObservableObject {
     private var textRecognitionService = TextRecognitionService()
     
     func saveNote(_ note: Note) {
-        notes.append(note)
+        notes.insert(note, at: 0)
         currentNote = Note()
     }
     
@@ -27,17 +27,35 @@ class NotesViewModel: ObservableObject {
     func recognizeText(from image: UIImage) {
         isLoading = true
         textRecognitionService.delegate = self
-        textRecognitionService.processImage(image)
+        guard let cgImage = image.cgImage else { isLoading = false
+            return
+        }
+        textRecognitionService.recognizeText(in: cgImage)
+    }
+    
+    func recognizeText(from audioUrl: URL) {
+        isLoading = true
+        textRecognitionService.delegate = self
+        textRecognitionService.recognizeText(fromAudioFileWith: audioUrl)
     }
 }
 
 extension NotesViewModel: TextRecognitionServiceDelegate {
-    func didRecognizeText(_ text: String) {
+    func didRecognizeTextFromImage(_ text: String) {
         isLoading = false
         currentNote.text.append(text)
     }
     
-    func didFailRecognizeText() {
+    func didFailRecognizeTextFromImage() {
+        isLoading = false
+    }
+    
+    func didRecogniceTextFromAudio(_ text: String) {
+        isLoading = false
+        currentNote.text.append(text)
+    }
+    
+    func didFailRecognizeFromAudio() {
         isLoading = false
     }
 }
