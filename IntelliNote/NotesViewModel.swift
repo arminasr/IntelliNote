@@ -11,7 +11,6 @@ class NotesViewModel: ObservableObject {
     @Published var currentNote = Note()
     @Published var notes: [Note] = []
     
-    
     func saveNote(_ note: Note) {
         notes.append(note)
         currentNote = Note()

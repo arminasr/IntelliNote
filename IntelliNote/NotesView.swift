@@ -16,18 +16,10 @@ struct NotesView: View {
     
     var body: some View {
         VStack {
-            TextField("Take a note",
-                      text: $viewModel.currentNote.text,
-                      onCommit: {
-                        viewModel.saveNote(viewModel.currentNote)
-                      })
-                .frame(maxWidth: .infinity,
-                       maxHeight: .infinity,
-                       alignment: .topLeading)
-                .background(Color.red)
+            NoteView(viewModel: viewModel)
             List {
                 ForEach(viewModel.notes) { note in
-                    Text(note.title)
+                    NoteRow(note: note)
                 }
                 .onDelete(perform: viewModel.deleteNote)
             }

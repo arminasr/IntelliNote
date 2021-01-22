@@ -7,14 +7,8 @@
 
 import Foundation
 
-struct Note: Identifiable {
+class Note: Identifiable, ObservableObject {
     var id = UUID()
     var text: String = ""
-    var title: String {
-        var substring = String(text.prefix(50))
-        if text.count > substring.count {
-            substring += "..."
-        }
-        return substring
-    }
+    var sentiment = "🤣"
 }
