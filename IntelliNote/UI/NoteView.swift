@@ -9,7 +9,8 @@ import SwiftUI
 
 struct NoteView: View {
     @ObservedObject var viewModel: NotesViewModel
-
+    @Binding var showingImagePicker: Bool
+    
     var body: some View {
         VStack {
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom), content: {
@@ -42,6 +43,7 @@ struct NoteView: View {
                 .padding()
                 Text("Sentiment: \(viewModel.currentNote.sentiment)")
                 Button(action: {
+                    showingImagePicker = true
                     print("📸")
                 },
                 label: { Text("📸").padding() })
@@ -57,6 +59,6 @@ struct NoteView: View {
 
 struct NoteView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteView(viewModel: NotesViewModel())
+        NoteView(viewModel: NotesViewModel(), showingImagePicker: .constant(false))
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct IntelliNoteApp: App {
     var body: some Scene {
+        
         WindowGroup {
             NotesView(viewModel: NotesViewModel())
         }
