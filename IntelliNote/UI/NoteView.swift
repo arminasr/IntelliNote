@@ -56,6 +56,7 @@ struct NoteView: View {
                     .background(Color.orange)
                     .buttonStyle()
             }
+            .animation(.easeInOut)
         }
     }
 }
