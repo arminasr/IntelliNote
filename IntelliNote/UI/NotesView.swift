@@ -17,11 +17,7 @@ enum ActiveSheet: Identifiable {
 
 struct NotesView: View {
     @ObservedObject var viewModel: NotesViewModel
-    @State var activeSheet: ActiveSheet?
-    
-    init(viewModel: NotesViewModel) {
-        self.viewModel = viewModel
-    }
+    @State private var activeSheet: ActiveSheet?
     
     var body: some View {
         ZStack {
@@ -39,25 +35,17 @@ struct NotesView: View {
                 switch sheet {
                 case .audioPicker:
                     PickerView { url in
-                        loadAudio(with: url)
+                        viewModel.recognizeText(from: url)
                     }
                 case .imagePicker:
                     ImagePicker { image in
-                        loadImage(image)
+                        viewModel.recognizeText(from: image)
                     }
                 }
             }
             ActivityIndicator(isAnimating: $viewModel.isLoading, style: .large)
         }
         .disabled(viewModel.isLoading)
-    }
-    
-    func loadImage(_ image: UIImage) {
-        viewModel.recognizeText(from: image)
-    }
-    
-    func loadAudio(with url: URL) {
-        viewModel.recognizeText(from: url)
     }
 }
 

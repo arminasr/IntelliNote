@@ -11,5 +11,5 @@ import Combine
 class Note: Identifiable, ObservableObject {
     var text: String = ""
     var id = UUID()
-    var sentiment = "🤣"
+    var language: String?
 }

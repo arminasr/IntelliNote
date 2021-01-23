@@ -17,42 +17,44 @@ struct NoteView: View {
                 TextEditor(text: $viewModel.currentNote.text)
                     .border(Color.gray, width: 0.5)
                     .font(.body)
-                    .autocapitalization(.words)
+
+                    .disableAutocorrection(true)
                     .padding()
-                Button(action: {
-                    if !viewModel.currentNote.text.isEmpty {
-                        viewModel.saveNote(viewModel.currentNote)
-                    }
-                },
-                label: { Text("✓").padding() })
-                .frame(width: 46, height: 46)
-                .foregroundColor(Color.white)
-                .background(Color.green)
-                .clipShape(Circle())
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                
+                Button(
+                    action: {
+                        if !viewModel.currentNote.text.isEmpty {
+                            viewModel.saveNote(viewModel.currentNote)
+                        }
+                    },
+                    label: { Text("✓").padding() })
+                    .frame(width: 46, height: 46)
+                    .background(Color.green)
+                    .foregroundColor(Color.white)
+                    .clipShape(Circle())
+                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             })
             HStack(alignment: .center) {
-                Button(action: {
-                    activeSheet = .audioPicker
-                    print("🎤")
-                },
-                label: { Text("🎤").padding() })
-                .foregroundColor(Color.white)
-                .background(Color.blue)
-                .cornerRadius(12.0)
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                .padding()
-                Text("Sentiment: \(viewModel.currentNote.sentiment)")
-                Button(action: {
-                    activeSheet = .imagePicker
-                    print("📸")
-                },
-                label: { Text("📸").padding() })
-                .foregroundColor(Color.white)
-                .background(Color.orange)
-                .cornerRadius(12.0)
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                .padding()
+                Button(
+                    action: {
+                        activeSheet = .audioPicker
+                    },
+                    label: {
+                        Text("🎤").padding()
+                    })
+                    .background(Color.blue)
+                    .buttonStyle()
+                if let language = viewModel.currentNote.language {
+                    Text("Language: \(language)")
+                }
+                
+                Button(
+                    action: {
+                        activeSheet = .imagePicker
+                    },
+                    label: { Text("📸").padding() })
+                    .background(Color.orange)
+                    .buttonStyle()
             }
         }
     }

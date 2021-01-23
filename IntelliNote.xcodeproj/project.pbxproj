@@ -19,6 +19,9 @@
 		426B726725B940A1003FDCEB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B726625B940A1003FDCEB /* Note.swift */; };
 		426B72CA25BAA737003FDCEB /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B72C925BAA737003FDCEB /* NoteRow.swift */; };
 		426B72CE25BAB3CA003FDCEB /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B72CD25BAB3CA003FDCEB /* NoteView.swift */; };
+		42CA887825BC0313002B915E /* SpeechRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA887725BC0313002B915E /* SpeechRecognitionService.swift */; };
+		42CA887B25BC0526002B915E /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA887A25BC0526002B915E /* ButtonStyle.swift */; };
+		42CA887E25BC06C7002B915E /* LanguageRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA887D25BC06C7002B915E /* LanguageRecognitionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		426B726625B940A1003FDCEB /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		426B72C925BAA737003FDCEB /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		426B72CD25BAB3CA003FDCEB /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		42CA887725BC0313002B915E /* SpeechRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionService.swift; sourceTree = "<group>"; };
+		42CA887A25BC0526002B915E /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		42CA887D25BC06C7002B915E /* LanguageRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRecognitionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 				424AAD5C25BAECF800E7A287 /* ImagePicker.swift */,
 				424AAD6625BB0EAA00E7A287 /* FilePickerPresentedView.swift */,
 				424AAD6225BB01AF00E7A287 /* ActivityIndicator.swift */,
+				42CA887A25BC0526002B915E /* ButtonStyle.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -68,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				424AAD5F25BAF42A00E7A287 /* TextRecognitionService.swift */,
+				42CA887725BC0313002B915E /* SpeechRecognitionService.swift */,
+				42CA887D25BC06C7002B915E /* LanguageRecognitionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -186,8 +195,11 @@
 				424AAD6725BB0EAA00E7A287 /* FilePickerPresentedView.swift in Sources */,
 				426B726425B93F08003FDCEB /* NotesViewModel.swift in Sources */,
 				424AAD6025BAF42A00E7A287 /* TextRecognitionService.swift in Sources */,
+				42CA887E25BC06C7002B915E /* LanguageRecognitionService.swift in Sources */,
 				424AAD6325BB01AF00E7A287 /* ActivityIndicator.swift in Sources */,
+				42CA887B25BC0526002B915E /* ButtonStyle.swift in Sources */,
 				426B726725B940A1003FDCEB /* Note.swift in Sources */,
+				42CA887825BC0313002B915E /* SpeechRecognitionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
